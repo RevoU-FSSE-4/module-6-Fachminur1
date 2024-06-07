@@ -1,224 +1,184 @@
+swagger: '2.0'
 info:
-  _postman_id: dd0e4493-e2ad-4ec9-87f0-d17b26e3c758
-  name: Module 6 Checkpoint
-  description: "# \U0001F680 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## \U0001F516 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## \U0001F4AA Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## \U0001F4A1Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)"
-  schema: 'https://schema.getpostman.com/json/collection/v2.1.0/collection.json'
-  _exporter_id: '34484533'
-item:
-  - name: List all animals
-    request:
-      method: GET
-      header: []
-      url:
-        raw: 'http://127.0.0.1:5000/animals'
-        protocol: http
-        host:
-          - '127'
-          - '0'
-          - '0'
-          - '1'
-        port: '5000'
-        path:
-          - animals
-    response: []
-  - name: List animal spesifically
-    request:
-      method: GET
-      header: []
-      url:
-        raw: 'http://127.0.0.1:5000/animals/1'
-        protocol: http
-        host:
-          - '127'
-          - '0'
-          - '0'
-          - '1'
-        port: '5000'
-        path:
-          - animals
-          - '1'
-    response: []
-  - name: Adding animal
-    request:
-      method: POST
-      header:
-        - key: '''content-type'''
-          value: application/json
-        - key: ''
-          value: ''
-          disabled: true
-      body:
-        mode: raw
-        raw: "{\r\n  \"species\": \"Tapir\",\r\n  \"age\": 1000,\r\n  \"gender\": \"Transgender\",\r\n  \"special_requirements\": \"Pemakan Semut\"\r\n}"
-        options:
-          raw:
-            language: json
-      url:
-        raw: 'http://127.0.0.1:5000/animals'
-        protocol: http
-        host:
-          - '127'
-          - '0'
-          - '0'
-          - '1'
-        port: '5000'
-        path:
-          - animals
-    response: []
-  - name: Update animal (just in case)
-    request:
-      method: PUT
-      header: []
-      body:
-        mode: raw
-        raw: "{\r\n  \"species\": \"Cat\",\r\n  \"age\": 6,\r\n  \"gender\": \"Male\",\r\n  \"special_requirements\": \"Makan whiskas hihihihi\"\r\n}"
-        options:
-          raw:
-            language: json
-      url:
-        raw: 'http://127.0.0.1:5000/animals/1?''content-type''=application/json'
-        protocol: http
-        host:
-          - '127'
-          - '0'
-          - '0'
-          - '1'
-        port: '5000'
-        path:
-          - animals
-          - '1'
-        query:
-          - key: '''content-type'''
-            value: application/json
-    response: []
-  - name: 'Animal died :('
-    request:
-      method: DELETE
-      header: []
-      url:
-        raw: 'http://127.0.0.1:5000/animals/1'
-        protocol: http
-        host:
-          - '127'
-          - '0'
-          - '0'
-          - '1'
-        port: '5000'
-        path:
-          - animals
-          - '1'
-    response: []
-  - name: List all employees
-    request:
-      method: GET
-      header: []
-      url:
-        raw: 'http://127.0.0.1:5000/employees'
-        protocol: http
-        host:
-          - '127'
-          - '0'
-          - '0'
-          - '1'
-        port: '5000'
-        path:
-          - employees
-    response: []
-  - name: List employee spesifically
-    request:
-      method: GET
-      header: []
-      url:
-        raw: 'http://127.0.0.1:5000/employees/1'
-        protocol: http
-        host:
-          - '127'
-          - '0'
-          - '0'
-          - '1'
-        port: '5000'
-        path:
-          - employees
-          - '1'
-    response: []
-  - name: 'Hiring another one :D'
-    request:
-      method: POST
-      header: []
-      body:
-        mode: raw
-        raw: "{\r\n  \"name\": \"Alice Johnson\",\r\n  \"email\": \"alice@example.com\",\r\n  \"phone\": \"555-678-9101\",\r\n  \"role\": \"Manager\",\r\n  \"schedule\": \"8-4\"\r\n}"
-        options:
-          raw:
-            language: json
-      url:
-        raw: 'http://127.0.0.1:5000/employees'
-        protocol: http
-        host:
-          - '127'
-          - '0'
-          - '0'
-          - '1'
-        port: '5000'
-        path:
-          - employees
-    response: []
-  - name: Update employee (just in case)
-    request:
-      method: PUT
-      header: []
-      body:
-        mode: raw
-        raw: "{\r\n    \"email\": \"jamesbond@example.com\",\r\n    \"id\": 1,\r\n    \"name\": \"James Bond\",\r\n    \"phone\": \"779-380-8\",\r\n    \"role\": \"Soldier\",\r\n    \"schedule\": \"9-5\"\r\n}"
-        options:
-          raw:
-            language: json
-      url:
-        raw: 'http://127.0.0.1:5000/employees/1?content-type=application/jason'
-        protocol: http
-        host:
-          - '127'
-          - '0'
-          - '0'
-          - '1'
-        port: '5000'
-        path:
-          - employees
-          - '1'
-        query:
-          - key: content-type
-            value: application/jason
-    response: []
-  - name: 'Firing an employee :('
-    request:
-      method: DELETE
-      header: []
-      url:
-        raw: 'http://127.0.0.1:5000/employees/1'
-        protocol: http
-        host:
-          - '127'
-          - '0'
-          - '0'
-          - '1'
-        port: '5000'
-        path:
-          - employees
-          - '1'
-    response: []
-event:
-  - listen: prerequest
-    script:
-      type: text/javascript
-      exec:
-        - ''
-  - listen: test
-    script:
-      type: text/javascript
-      exec:
-        - ''
-variable:
-  - key: id
-    value: '1'
-  - key: base_url
-    value: 'https://postman-rest-api-learner.glitch.me/'
+  title: Flask API Documentation
+  description: Documentation for the Flask API endpoints
+  version: '1.0'
+paths:
+  /animals:
+    get:
+      summary: Get Animals list
+      responses:
+        '200':
+          description: Getting list of animals
+    post:
+      summary: Create a new Animal
+      parameters:
+        - in: body
+          name: body
+          description: Animal object
+          required: true
+          schema:
+            $ref: '#/definitions/Animal'
+      responses:
+        '201':
+          description: New animal created successfully
+  /animals/{animal_id}:
+    get:
+      summary: Get Animal list specifically
+      parameters:
+        - in: path
+          name: animal_id
+          description: ID of the animal to retrieve
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '201':
+          description: Getting list of animal specifically
+    put:
+      summary: Update an Animal
+      parameters:
+        - in: path
+          name: animal_id
+          description: ID of the animal to update
+          required: true
+          type: integer
+          format: int64
+        - in: body
+          name: body
+          description: Animal object
+          required: true
+          schema:
+            $ref: '#/definitions/Animal'
+      responses:
+        '200':
+          description: Animal updated successfully
+        '404':
+          description: Animal not found
+    delete:
+      summary: Delete an Animal
+      parameters:
+        - in: path
+          name: animal_id
+          description: ID of the animal to delete
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Animal deleted successfully
+        '404':
+          description: Animal not found
+  /employees:
+    get:
+      summary: Get Employees list
+      responses:
+        '200':
+          description: Getting list of employees
+    post:
+      summary: Create a new Employee
+      parameters:
+        - in: body
+          name: body
+          description: Employee object
+          required: true
+          schema:
+            $ref: '#/definitions/Employee'
+      responses:
+        '201':
+          description: New employee created successfully
+  /employees/{employee_id}:
+    get:
+      summary: Get Employee details
+      parameters:
+        - in: path
+          name: employee_id
+          description: ID of the employee to retrieve
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Employee details retrieved successfully
+        '404':
+          description: Employee not found
+    put:
+      summary: Update an Employee
+      parameters:
+        - in: path
+          name: employee_id
+          description: ID of the employee to update
+          required: true
+          type: integer
+          format: int64
+        - in: body
+          name: body
+          description: Employee object
+          required: true
+          schema:
+            $ref: '#/definitions/Employee'
+      responses:
+        '200':
+          description: Employee updated successfully
+        '404':
+          description: Employee not found
+    delete:
+      summary: Delete an Employee
+      parameters:
+        - in: path
+          name: employee_id
+          description: ID of the employee to delete
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Employee deleted successfully
+        '404':
+          description: Employee not found
+definitions:
+  Animal:
+    type: object
+    required:
+      - species
+      - age
+      - gender
+      - special_requirements
+    properties:
+      species:
+        type: string
+        description: The species of the animal
+      age:
+        type: integer
+        description: The age of the animal
+      gender:
+        type: string
+        description: The gender of the animal
+      special_requirements:
+        type: string
+        description: Special requirements for the animal
+  Employee:
+    type: object
+    required:
+      - name
+      - email
+      - phone
+      - role
+      - schedule
+    properties:
+      name:
+        type: string
+        description: The name of the employee
+      email:
+        type: string
+        format: email
+        description: The email address of the employee
+      phone:
+        type: string
+        description: The phone number of the employee
+      role:
+        type: string
+        description: The role of the employee
+      schedule:
+        type: string
+        description: The schedule of the employee
