@@ -1,6 +1,8 @@
 from flask import Flask, jsonify, request
+from flasgger import Swagger
 
 app = Flask(__name__)
+swagger = Swagger(app)
 
 
 animals = [
@@ -15,6 +17,13 @@ employees = [
 
 @app.route('/animals', methods=['GET'])
 def get_animals():
+    """
+    Get Animals list
+    ---
+    responses:
+        200:
+            description: list of tasks
+    """
     return jsonify(animals)
 
 @app.route('/animals/<int:animal_id>', methods=['GET'])
