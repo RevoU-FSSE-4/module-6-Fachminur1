@@ -1,10 +1,8 @@
-# feedings.py
 from flask import Blueprint, jsonify, request
 from flasgger import swag_from
 
 feedings_bp = Blueprint('feedings', __name__)
 
-# Sample data for feeding schedules
 feeding_schedules = [
     {"id": 1, "terminal_id": 101, "enclosure_id": 1, "food_type": "Meat", "feeding_time": "09:00"},
     {"id": 2, "terminal_id": 102, "enclosure_id": 2, "food_type": "Vegetables", "feeding_time": "10:00"},
@@ -132,7 +130,7 @@ def update_feeding(feeding_id):
         }
     ],
     'responses': {
-        200: {
+        204: {
             'description': 'Feeding schedule deleted successfully'
         },
         404: {
@@ -143,9 +141,8 @@ def update_feeding(feeding_id):
 def delete_feeding(feeding_id):
     global feeding_schedules
     feeding_schedules = [f for f in feeding_schedules if f['id'] != feeding_id]
-    return jsonify({'message': 'Feeding schedule deleted'}), 200
+    return jsonify({'message': 'Feeding schedule deleted'}), 204
 
-# Swagger definitions
 definitions = {
     'FeedingSchedule': {
         'type': 'object',
