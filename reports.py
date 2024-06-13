@@ -1,10 +1,8 @@
-# reports.py
 from flask import Blueprint, jsonify
 from flasgger import swag_from
 
 reports_bp = Blueprint('reports', __name__)
 
-# Sample data for reports
 animals_report = {
     "species_distribution": {
         "Lion": 5,
